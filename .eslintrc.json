@@ -1,0 +1,152 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "extends": ["airbnb", "prettier"],
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "no-var": "off",
+        "no-unsafe-optional-chaining": 0,
+        "react/jsx-no-useless-fragment": [2, {"allowExpressions": true}],
+        "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "@typescript-eslint/no-empty-function": 0,
+        "@typescript-eslint/no-shadow": ["error"]
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "no-use-before-define": [
+          "error",
+          {
+            "functions": false
+          }
+        ]
+      }
+    },
+    {
+      // 3) Now we enable eslint-plugin-testing-library rules or preset only for matching testing files!
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/test?(*.).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react", "plugin:jest/recommended", "plugin:jest/style"],
+      "rules": {
+        "testing-library/no-debugging-utils": "error",
+        "testing-library/no-container": 0,
+        "testing-library/no-node-access": ["error", {"allowContainerFirstChild": true}]
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["."]
+      },
+      "typescript": {}
+    }
+  },
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "plugins": ["react", "no-only-tests", "react-hooks", "testing-library", "jest", "no-storage"],
+  "rules": {
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "arrow-body-style": 0,
+    "camelcase": 0,
+    "no-mixed-operators": 0,
+    "class-methods-use-this": 0,
+    "no-bitwise": 0,
+    "default-param-last": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ],
+    "no-use-before-define": "off",
+    "object-curly-spacing": [2, "never"],
+    "curly": ["error", "all"],
+    "no-shadow": 0,
+    "no-underscore-dangle": 0,
+    "no-await-in-loop": 0,
+    "prefer-regex-literals": 0,
+    "prefer-destructuring": 0,
+    "prefer-promise-reject-errors": 0,
+    "vars-on-top": 0,
+    "no-else-return": ["error", {"allowElseIf": true}],
+    "no-restricted-globals": 0,
+    "no-restricted-syntax": 0,
+    "no-promise-executor-return": 0,
+    "no-unsafe-optional-chaining": 0,
+    "import/no-named-as-default-member": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {"devDependencies": ["**/*test*.js", "**/*test*.ts", "**/*test*.tsx"]}
+    ],
+    "import/no-named-as-default": 0,
+    "import/extensions": 0,
+    "import/prefer-default-export": 0,
+    "import/no-unresolved": [
+      "error",
+      {
+        "commonjs": true
+      }
+    ],
+    "import/no-cycle": 0, // off by default, should be checked regularly
+    "import/named": 0,
+    "react/jsx-fragments": [1, "element"],
+    "react/jsx-no-target-blank": 0,
+    "react/jsx-filename-extension": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/require-default-props": 0,
+    "react/static-property-placement": 0,
+    "react/state-in-constructor": 0,
+    "react/jsx-indent-props": [2, 4],
+    "react/destructuring-assignment": 0,
+    "react/forbid-foreign-prop-types": 0,
+    "react/function-component-definition": 0,
+    "react/no-unstable-nested-components": 0,
+    "react/jsx-no-useless-fragment": [2, {"allowExpressions": true}],
+    "react/jsx-no-constructed-context-values": 0,
+    "jsx-a11y/control-has-associated-label": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/mouse-events-have-key-events": 0,
+    "jsx-a11y/no-autofocus": 0,
+    "no-only-tests/no-only-tests": 2,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-storage/no-browser-storage": 2,
+    "no-param-reassign": ["error", {"props": false}],
+    "react/no-array-index-key": "off"
+  }
+}

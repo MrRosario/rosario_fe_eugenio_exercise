@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "baseUrl": "src",
+    "noImplicitAny": false,
+    "module": "esnext",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "alwaysStrict": false,
+    "strictNullChecks": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "lib": ["DOM", "ESNext", "WebWorker"],
+    "outDir": "dist",
+    "paths": {
+      "error-boundaries": ["./component/common/ErrorBoundaries.tsx"],
+      "test-utils": ["test-utils"],
+      "@temposoftware/tempo-i18n": ["./translate.ts"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

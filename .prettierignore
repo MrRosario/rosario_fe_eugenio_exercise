@@ -1,0 +1,11 @@
+# Ignore artifacts:
+package.json
+tsconfig.json
+build/
+coverage/
+node_modules/
+README.md
+public/
+.eslintrc.json
+.prettierrc.json
+package-lock.json
