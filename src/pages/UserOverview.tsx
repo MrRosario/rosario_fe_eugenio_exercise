@@ -5,8 +5,12 @@ import Card from '../components/Card';
 import {Container} from '../components/GlobalComponents';
 import Header from '../components/Header';
 
-var mapU = (user: UserData) => {
-    var columns = [
+type userTypeProps = {
+    user: UserData;
+};
+
+const UserCard = ({user}: userTypeProps) => {
+    const columns = [
         {
             key: 'Name',
             value: `${user.firstName} ${user.lastName}`,
@@ -25,12 +29,11 @@ var mapU = (user: UserData) => {
 
 const UserOverview = () => {
     const location = useLocation();
+
     return (
         <Container>
-            <Header
-                title={`User ${location.state.firstName} ${location.state.lastName}`}
-            />
-            {mapU(location.state)}
+            <Header title={`User ${location.state.firstName} ${location.state.lastName}`} />
+            <UserCard user={location.state} />
         </Container>
     );
 };
