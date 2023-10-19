@@ -1,15 +1,12 @@
 import * as React from 'react';
 import {useNavigate} from 'react-router-dom';
-import {Teams, UserData} from 'types';
+import {ListItemColumn, Teams, UserData} from 'types';
 import {Container} from './styles';
 
 interface Props {
     id?: string;
     url?: string;
-    columns: Array<{
-        key: string;
-        value: string;
-    }>;
+    columns: ListItemColumn[];
     hasNavigation?: boolean;
     navigationProps?: UserData | Teams;
 }
